@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="otherViewModel"
+            type="com.example.stonepaperscissors.screens.other_player.OtherPlayerViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screens.other_player.OtherPlayerFragment">
+
+        <View
+            android:id="@+id/centerView"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="#EF1101"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/player_1_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rotation="180"
+            android:text="@string/player_1"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/centerView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/player_2_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/player_2"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/centerView" />
+
+        <LinearLayout
+            android:id="@+id/p1Linear_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:rotation="180"
+            app:layout_constraintBottom_toTopOf="@+id/player_1_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/p1Star_1_image"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="1dp"
+                android:src="@drawable/no_star"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/p1Star_2_image"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="1dp"
+                android:src="@drawable/no_star"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/p1Star_3_image"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="1dp"
+                android:src="@drawable/no_star"
+                tools:ignore="ContentDescription" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/p2Linear_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/player_2_text">
+
+            <ImageView
+                android:id="@+id/p2Star_1_image"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="1dp"
+                android:src="@drawable/no_star"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/p2Star_2_image"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="1dp"
+                android:src="@drawable/no_star"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/p2Star_3_image"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="1dp"
+                android:src="@drawable/no_star"
+                tools:ignore="ContentDescription" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/p1Linear_btn"
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:rotation="180"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/p1Rock_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_btn_bg"
+                android:text="@string/rock"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:onClick='@{() -> otherViewModel.onPlayPlayer1("rock")}'/>
+
+            <Button
+                android:id="@+id/p1Paper_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_btn_bg"
+                android:text="@string/paper"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:onClick='@{() -> otherViewModel.onPlayPlayer1("paper")}'/>
+
+            <Button
+                android:id="@+id/p1Scissor_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_btn_bg"
+                android:text="@string/scissor"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:onClick='@{() -> otherViewModel.onPlayPlayer1("scissor")}'/>
+
+        </LinearLayout>
+
+        <!--Player2-->
+        <LinearLayout
+            android:id="@+id/p2Linear_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/p2Rock_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_btn_bg"
+                android:text="@string/rock"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:onClick='@{() -> otherViewModel.onPlayPlayer2("rock")}'/>
+
+            <Button
+                android:id="@+id/p2Paper_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_btn_bg"
+                android:text="@string/paper"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:onClick='@{() -> otherViewModel.onPlayPlayer2("paper")}'/>
+
+            <Button
+                android:id="@+id/p2Scissor_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_btn_bg"
+                android:text="@string/scissor"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:onClick='@{() -> otherViewModel.onPlayPlayer2("scissor")}'/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/p1_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginBottom="40dp"
+            android:rotation="180"
+            app:layout_constraintBottom_toTopOf="@+id/p1Linear_img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/p1Linear_btn"
+            tools:src="@drawable/stone" />
+
+        <ImageView
+            android:id="@+id/p2_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginBottom="28dp"
+            app:layout_constraintBottom_toTopOf="@+id/p2Linear_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/p2Linear_img"
+            tools:src="@drawable/paper" />
+
+        <TextView
+            android:id="@+id/p1Status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rotation="180"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/p1Linear_img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/p1_image"
+            app:layout_constraintTop_toBottomOf="@+id/p1Linear_btn"
+            tools:text="@string/ready" />
+
+        <TextView
+            android:id="@+id/p2Status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/p2Linear_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/p2_image"
+            app:layout_constraintTop_toBottomOf="@+id/p2Linear_img"
+            tools:text="@string/ready" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

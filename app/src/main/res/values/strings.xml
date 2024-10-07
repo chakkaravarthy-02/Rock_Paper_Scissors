@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Stone Paper Scissors</string>
+    <string name="play_with_other">Play with other</string>
+    <string name="play_with_computer">Play with computer</string>
+    <string name="see_the_instruction">See the instruction ?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
+    <string name="rock">Rock</string>
+    <string name="paper">Paper</string>
+    <string name="scissor">Scissor</string>
+    <string name="ready">Ready</string>
+    <string name="how_to_play">How to play?</string>
+    <string name="instruction">1.Enter your name first\n
+        2.Either one of you choose one of the options\n
+        3.Wait for opponent to choose their choice\n
+        4.Try to win the game\n
+        5.Have fun!!!
+    </string>
+</resources>
